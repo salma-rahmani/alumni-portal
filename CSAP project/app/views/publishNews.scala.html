@@ -1,0 +1,84 @@
+<html !DOCTYPE html>
+
+
+<head>
+<title>Signed</title>
+        <link rel="stylesheet" type="text/css" media="screen"
+         href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+        
+
+</head>
+
+<body>
+<title> CSAP( Computer Science Alumni Platform )</title>
+
+	
+	</div>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Home</a>
+    <ul class="nav">
+      <li><a href="#">News and Events</a></li>
+      <li><a href="#">Anual Seminars</a></li>
+       <li><a href="#">Jobs Offers</a></li>
+       <li><a href="#">Admission Volunteer Opportunaties</a></li>
+      <li><a href="#">Scolorships</a></li>
+      <li><a href="#">My Profile</a></li>
+     
+      <li><a href="#">Contact Administrator</a></li>
+     
+      <li><a href="#">About CSAP</a></li>
+      
+    </ul>
+  </div>
+</div>
+
+<table><tr><td><div class="page-header">
+  <h1>Computer Science Alumni Platform <small>CSAP</small></h1>
+</div> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>	<div align="right"><td >
+</td>
+<td><form action="@routes.Application.index()" method="get">
+ <button class="btn btn-primary" type="submit">SignOut</button>
+ </form>
+</div>
+ </form></td></tr> </table>
+ 	
+</div>
+	 
+
+
+
+ <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+    <ul class="nav nav-tabs nav-stacked">
+     <li ><a href="">Computer Science Support Service</a><br></li>      
+      <li><a href="">Academic Statements</a><br></li>
+      <li><a href="">Service Learning</a><br></li>
+    
+      <li><a href="">Team Paper guide</a><br></li> 
+      <li><a href="">Graduation Requirments</a><br></li>     
+      <li><a href="">Registration</a><br></li>
+      <li><a href="">Transfers</a><br></li>
+      <li><a href="">General Information</a><br></li>
+      <li><a href="">Help</a></li>
+</ul>
+     
+      
+    </div>
+    <div class="span1"></div>
+    <div class="span8">
+    
+    <br><br><input type="text" placeholder="News Title" name="title"> 			<input type="submit" class="btn btn-success" value="Upload File"><br><br>
+    <form action="@routes.NewsPublisher.submitPublish()" method="post">
+    <textarea rows="8" class="field span10" placeholder="News Description" name="description"></textarea>
+      <br><button class="btn btn-primary" type="submit" >Publish</button>
+     </form>
+      </div>
+</div>
+ 
+
+
+ 
+</body>
+</html>

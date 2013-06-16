@@ -1,0 +1,98 @@
+@(message: String)
+
+@main("CSAP Home Page") {
+    
+    <html !DOCTYPE html>
+
+
+<head>
+<title>Home Page</title>
+        <link rel="stylesheet" type="text/css" media="screen"
+         href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+        
+
+</head>
+
+<body>
+<title> CSAP( Computer Science Alumni Platform )</title>
+
+	
+	</div>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Home</a>
+    <ul class="nav">
+      <li><a href="http://localhost:9000/submitPublish">News and Events</a></li>
+      <li><a href="#">Anual Seminars</a></li>
+       <li><a href="#">Jobs Offers</a></li>
+       <li><a href="#">Admission Volunteer Opportunaties</a></li>
+      <li><a href="#">Scolorships</a></li>
+      <li><a href="#">My Profile</a></li>
+     
+      <li><a href="#">Contact Administrator</a></li>
+     
+      <li><a href="#">About CSAP</a></li>
+      
+    </ul>
+  </div>
+</div>
+
+<table><tr><td><div class="page-header">
+  <h1>Computer Science Alumni Platform <small>CSAP</small></h1>
+</div> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>	<div align="right"><td ><form action="@routes.LogIn.signIn()" method="get">
+ <button class="btn btn-primary" type="submit">Sign In</button> 
+ </form></td><td><form action="@routes.Register.signup()" method="get">
+ <button class="btn btn-primary" type="submit">Sign Up</button>
+ </form></td></div>
+ </form></td></tr> </table>
+ 	
+</div>
+	 
+
+
+
+ <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+    <ul class="nav nav-tabs nav-stacked">
+     <li ><a href="">Computer Science Support Service</a><br></li>      
+      <li><a href="">Academic Statements</a><br></li>
+      <li><a href="">Service Learning</a><br></li>
+    
+      <li><a href="">Team Paper guide</a><br></li> 
+      <li><a href="">Graduation Requirments</a><br></li>     
+      <li><a href="">Registration</a><br></li>
+      <li><a href="">Transfers</a><br></li>
+      <li><a href="">General Information</a><br></li>
+      <li><a href="">Help</a></li>
+</ul>
+     
+      
+    </div>
+    <div class="span9">
+     <table class="table table-striped">
+<div class="container">
+
+	 
+<tr><td><h3>Welcome to CSAP</h3>
+<img src="@routes.Assets.at("images/hu.jpg")" width="700" height="50"><br><br>
+CSAP collects all the Computer Science graduated students around the country and have access to them.<br>
+Keeping a clear line of communication between graduated students and the faculty of computer science is a very big challenge to be solved and it can
+be taken care of using several methods.CSAP method is a solution that can be offered and keep the communication line clear between both of them closely.<br>   
+By this application Computer Science faculty can put an announcement of their latest updates,scholarships, and job offers to notify all the students about new opportunities so students can apply to
+their favorite section .<br></td></tr>
+<tr><td><br><br>
+
+</td></tr>
+</div></table>
+    </div>
+  </div>
+</div>
+ 
+
+
+ 
+</body>
+</html>
+    
+}
