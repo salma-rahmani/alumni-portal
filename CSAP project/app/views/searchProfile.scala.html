@@ -1,5 +1,4 @@
-@(m: Student)
-
+@(mylist: List[Student])
  <html !DOCTYPE html>
 
 
@@ -53,29 +52,13 @@
 
 </div>
 <div style="margin:0 0px 0px 1000px;">
+ @for(m <- mylist) {	
  <button class="btn btn-larg btn-primary" type="button">@m.name @m.lastname</button> 
  
- <button class="btn btn-larg btn-primary" type="button">Home</button> 
+ 
  
  <div class="btn-group">
-    <a class="btn btn-larg btn-primary" data-toggle="dropdown" href="#">
-    Setting
-    <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-   <a href="#">
-   <center> Privacy Setting </center>
    
-    </a><br>
-    <a href="#">
-   <center> Account Setting </center>
-   
-    </a><br>
-    <a href="#">
-    <center> Help </center>
-   
-    </a>
-    </ul>
     </div>
  
   </div><br>
@@ -87,23 +70,22 @@
     <ul class="nav">
     <li class="active">
     <a href="#">Info</a> 
+   
      Name: @m.name<br>
      Last Name: @m.lastname<br>
      Father Name:@m.fathername<br>
      ID : @m.id<br>
      Email:@m.email<br>
-     Contact Number:@m.cn<br>
-     Emergency Contact Number:@m.ecn<br>
      Origin Residence:@m.main<br>
      Current Residence:@m.current<br></li>
-
+}
     
     <li><a href="#">Applied News</a></li>
     <li><a href="#">Public Activity</a></li>
       
       
     </ul>
-    <button class="btn btn-larg btn-primary" type="button"  style="margin:1px 0px 0px 1px;">Edit Profile </button> </div>
+    </div>
   </div>  </div>
 
 

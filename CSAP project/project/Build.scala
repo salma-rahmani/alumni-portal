@@ -14,6 +14,7 @@ object ApplicationBuild extends Build {
     javaEbean,
     "mysql" % "mysql-connector-java" % "5.1.24"
     
+    
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(

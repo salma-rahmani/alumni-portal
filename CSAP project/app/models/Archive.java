@@ -9,13 +9,10 @@ import play.db.ebean.Model.Finder;
 
 
 @Entity
-public class News extends Model {
+public class Archive extends Model {
 	@Id
 	 public String title;
 	 public String description;
-	 public String privacy;
-	 public String file;
-	 public String path;
 	 public static Finder<String, News> find = new Finder<String, News>(
 				String.class, News.class);
 

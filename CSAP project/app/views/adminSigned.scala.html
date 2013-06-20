@@ -40,7 +40,7 @@
   <h1>Computer Science Alumni Platform <small>CSAP</small></h1>
 </div> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>	<div align="right"><td >
 </td>
-<td><form action="@routes.Application.index()" method="get">
+<td><form action="@routes.Index.index()" method="get">
  <button class="btn btn-primary" type="submit">SignOut</button>
  </form>
 </div>
@@ -74,7 +74,8 @@
      <div class="container" >
 
 	
-   <tr><td><div class="alert alert-success"><h3>Hi @m.name<br>enjoy CSAP ;)</h3></div><br>Now you have access to all CSAP members.<br>You can find them by using CSAP search capability.<br><br><br><form action="@routes.SearchMember.submitSearch()" method="post" class="navbar-search pull-left">
+   <tr><td><div class="alert alert-success"><h3>Hi @m.name<br>enjoy CSAP ;)</h3></div><br>Now you have access to all CSAP members.<br>You can find them by using CSAP search capability.<br><br><br>
+   <form action="@routes.SearchMember.submitSearch()" method="post" class="navbar-search pull-left">
 	
 	Search by:	
 	
@@ -95,7 +96,17 @@
 
 <form action="@routes.NewsPublisher.publishNews()" method="get"><input type="submit" class="btn btn-success" value="PublishNews">
 	
- </form></td></tr>
+ </form></td>
+ <td><form action="@routes.MessageForwarder.checkInbox()" method="get">
+ <input type="submit" class="btn btn-success" value="CheckInbox">
+	 </form>
+	 <form action="@routes.ApplyRecorder.applyReciever()" method="get">
+ <input type="submit" class="btn btn-success" value="JobAppliers">
+	 </form>
+ 
+ 
+ 
+ </tr>
 </table>
     </div>
   </div>

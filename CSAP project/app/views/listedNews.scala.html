@@ -1,4 +1,5 @@
 @(mylist: List[News])
+@import helper._
 <html !DOCTYPE html>
 
 
@@ -41,9 +42,10 @@
   <h1>Computer Science Alumni Platform <small>CSAP</small></h1>
 </div> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>	<div align="right"><td >
 </td>
-<td><form action="@routes.Application.index()" method="get">
+<td><form action="" method="get">
  <button class="btn btn-primary" type="submit">SignOut</button>
  </form>
+ <form action="@routes.ApplyRecorder.applyJob()" method="get" ><br><input type="submit" class="btn btn-success" value="ApplyForJob"></form>
 </div>
  </form></td></tr> </table>
  	
@@ -71,16 +73,31 @@
       
     </div>
     <div class="span9">
-    <form >
     <div class="container">
     <table class="table table-striped">
+    
     @for(n <- mylist) {	
+    @if(n.privacy == "public") { 
+    
+
     <tr class="warning">
-    <td> <fieldset><h2>@n.title</h2></td><td><input type="submit" class="btn btn-success" value="ApplyForThis"></td></tr>
+    
+    
+    <td> <fieldset><h2>@n.title</h2></td>
+    
+    <td>
+    @form(routes.NewsDownloader.downloadNews(n.path)){
+    <br><input type="submit" class="btn btn-success" value="Download">
+    }
+    </td>
+</div></tr>
     <tr><td><p>@n.description<p></fieldset></td>
      </tr>}
-     </table></div>
-     </form>
+     
+     
+     
+    }     </table></div>
+     
       </div>
    
     <hr><br><br><br>

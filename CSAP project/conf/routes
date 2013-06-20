@@ -3,16 +3,27 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET     /                           controllers.Index.index()
 GET		/signup						controllers.Register.signup()
+GET		/contactAdmin				controllers.MessageForwarder.contactAdmin()
+POST	/sendMessage				controllers.MessageForwarder.sendMessage()
+GET		/checkInbox					controllers.MessageForwarder.checkInbox()
 POST	/submitAdd					controllers.Register.submitAdd()
 GET		/CreateProfile				controllers.Register.createProfile()
 GET 	/SignIn						controllers.LogIn.signIn()
 GET		/SubmitSignIn				controllers.LogIn.submitSignIn()
 POST	/submitSearch				controllers.SearchMember.submitSearch()
+POST	/searchProfile				controllers.SearchMember.searchProfile()
 GET		/publishNews				controllers.NewsPublisher.publishNews()
 POST	/submitPublish				controllers.NewsPublisher.submitPublish()
+POST	/ARCHIVE      			    controllers.NewsPublisher.archive()
 GET		/checkNews					controllers.NewsPublisher.checkNews()
+
+
+POST	/downloads/:path			controllers.NewsDownloader.downloadNews(path: String)
+GET		/applyJob					controllers.ApplyRecorder.applyJob()
+POST	/submitApply				controllers.ApplyRecorder.submitApply()
+GET		/applyReciever				controllers.ApplyRecorder.applyReciever()
 #GET	/signed						controllers.LogIn.adminSigned()
 
 

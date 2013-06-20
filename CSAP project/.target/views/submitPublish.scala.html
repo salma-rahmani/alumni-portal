@@ -6,6 +6,11 @@
 <title>Signed</title>
         <link rel="stylesheet" type="text/css" media="screen"
          href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+      <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+        <script src="@routes.Assets.at("javascripts/bootstrap-dropdown.js")" type="text/javascript"></script>
+ <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+  <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+        
         
 
 </head>
@@ -41,7 +46,7 @@
   <h1>Computer Science Alumni Platform <small>CSAP</small></h1>
 </div> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>	<div align="right"><td >
 </td>
-<td><form action="@routes.Application.index()" method="get">
+<td><form action="@routes.Index.index()" method="get">
  <button class="btn btn-primary" type="submit">SignOut</button>
  </form>
 </div>
@@ -71,22 +76,27 @@
       
     </div>
     <div class="span9">
-    <form >
+    
     <div class="container">
+    
+     
+    @for(n <- mylist) {	   
     <table class="table table-striped">
-    @for(n <- mylist) {	
+    
     <tr class="warning">
-    <td> <fieldset><h2>@n.title</h2></td><td><input type="submit" class="btn btn-success" value="Archive"></td></tr>
-    <tr><td><p>@n.description<p></fieldset></td>
-     </tr>}
+    <form action="@routes.NewsPublisher.archive()" method="post">
+    <tr><td><input  class="btn btn-warning" name="title" value="@n.title" ></td><td></td><td></td><td></td><td></td><td></td><td><input type="submit" class="btn btn-warning" value="Archive"></td><br>
+</tr><tr><td><input class="field span10" name="description" value="@n.description"></td><td>@n.privacy</td><br>
+   </tr>
+     </form>}<tr><td></td><td></td><td></td><td></td><td></td><td><input type="submit" class="btn btn-warning" value="SeeArchivedNews"></td></tr></table>
      </table></div>
-     </form>
+     
       </div>
    
     <hr><br><br><br>
     
       
-      
+    
 </div>
  
 

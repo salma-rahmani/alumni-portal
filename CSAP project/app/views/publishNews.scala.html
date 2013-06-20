@@ -37,7 +37,7 @@
   <h1>Computer Science Alumni Platform <small>CSAP</small></h1>
 </div> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>	<div align="right"><td >
 </td>
-<td><form action="@routes.Application.index()" method="get">
+<td><form action="@routes.Index.index()" method="get">
  <button class="btn btn-primary" type="submit">SignOut</button>
  </form>
 </div>
@@ -68,9 +68,16 @@
     </div>
     <div class="span1"></div>
     <div class="span8">
+     
     
-    <br><br><input type="text" placeholder="News Title" name="title"> 			<input type="submit" class="btn btn-success" value="Upload File"><br><br>
-    <form action="@routes.NewsPublisher.submitPublish()" method="post">
+    <form action="@routes.NewsPublisher.submitPublish()" method="post" enctype="multipart/form-data">
+    <select class="selectpicker" name="privacy">
+    <option>public</option>
+    <option>private</option>
+    </select>
+    <input type = "file" name ="file"><br><br>
+   
+    <br><br><input type="text" placeholder="News Title" name="title"><br>
     <textarea rows="8" class="field span10" placeholder="News Description" name="description"></textarea>
       <br><button class="btn btn-primary" type="submit" >Publish</button>
      </form>
