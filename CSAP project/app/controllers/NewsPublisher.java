@@ -18,7 +18,8 @@ import play.data.Form;
 import views.html.publishNews;
 import views.html.submitPublish;
 import views.html.listedNews;
-
+import views.html.archive;
+import views.html.checkArchive;
 public class NewsPublisher extends Controller {
 	public static News news;
 	public static Archive arch;
@@ -86,9 +87,13 @@ public class NewsPublisher extends Controller {
 		arch = archiveForm.get();
 		arch.save();
 		News.find.ref(arch.title).delete();
-		return ok("archive shod");
+		return ok(archive.render());
 	}
-	
+	public static Result checkArchive() {
+		List<Archive> list = Archive.find.findList();
+
+		return ok(checkArchive.render(list));
+	}
 	
 	}
 	

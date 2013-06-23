@@ -10,6 +10,8 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.applyJob;
 import views.html.applyReciever;
+import views.html.submitApply;
+import views.html.wrongInput;
 
 public class ApplyRecorder extends Controller{
 	public static Apply apply;
@@ -20,11 +22,14 @@ public class ApplyRecorder extends Controller{
 }
 	public static Result submitApply() {
 		Form<Apply> applyForm = Form.form(Apply.class).bindFromRequest();
+		if (applyForm.hasErrors()) {
+			return ok(wrongInput.render());
+		}else{
 		apply = applyForm.get();
 		apply.save();
-		return ok("you have been submitted");
+		return ok(submitApply.render());
 		
-	}
+	}}
 	public static Result applyReciever() {
 		
 		List<Apply> list = Apply.find.findList();

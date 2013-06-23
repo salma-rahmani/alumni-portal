@@ -7,14 +7,15 @@ import java.util.List;
 //import models.CategoryStorage;
 import models.Key;
 import models.Student;
+import models.sign;
 
 import play.data.Form;
 import play.mvc.*;
-import play.mvc.Security;
 import views.html.*;
 
 
 public class KeyChecker extends Controller {
+	public static Student student;
 
 	// -- Authentication
 
@@ -34,9 +35,16 @@ public class KeyChecker extends Controller {
 		Form<Key> loginForm = form(Key.class).bindFromRequest();
 		if (loginForm.hasErrors()) {
 			return badRequest(login.render(loginForm));
-		} else {
+		} else if(loginForm.get().email.equals("monira_srt@yahoo.com")) {
+			Key find = loginForm.get();
 			session("email", loginForm.get().email);
-			return redirect(routes.Index.index());
+			return ok(adminSigned.render(Student.findByEmail(find.email).name));
+			
+		}
+		else{
+			Key find = loginForm.get();
+			session("email", loginForm.get().email);
+			return ok(userSigned.render(Student.findByEmail(find.email).name));
 		}
 	}
 

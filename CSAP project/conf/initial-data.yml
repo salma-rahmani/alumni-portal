@@ -4,7 +4,7 @@
 users:
 
     - !!models.Student
-        email:      monira_srt@yahoo.com
+        email:      monira@yahoo.com
         password:   admin
         
         

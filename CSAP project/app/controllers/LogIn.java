@@ -18,22 +18,19 @@ public class LogIn extends Controller{
 	}
 	public static Result submitSignIn(){
 		Form<Student> studentForm = Form.form(Student.class).bindFromRequest();
-		student = studentForm.get();
-		
-		 
-		
+		student = studentForm.get();		
 		  Form<sign> signForm = Form.form(sign.class).bindFromRequest();
 			sign s = signForm.get();
 			String theEmail = s.email;
 			String password = s.password;
-			Student findsign= Student.find.where().eq("email", theEmail).eq("password", password).findUnique();
+			Student findsign= Student.find.where().eq("name", theEmail).eq("password", password).findUnique();
 			if(findsign != null){
 				if(theEmail.equals("monira_srt@yahoo.com")){
-					return ok(adminSigned.render(findsign));
+					return ok("klsjdkj");
 				}
 				else
 				{
-			return ok(userSigned.render(findsign));
+			return ok("skldmzkxm");
 			}}
 			else{
 			return ok(unsigned.render());

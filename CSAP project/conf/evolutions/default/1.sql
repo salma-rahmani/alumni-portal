@@ -4,12 +4,11 @@
 # --- !Ups
 
 create table apply (
-  name                      varchar(255) not null,
-  email                     varchar(255),
-  id                        integer,
+  email                     varchar(255) not null,
+  name                      varchar(255),
   graduationyear            integer,
   job                       varchar(255),
-  constraint pk_apply primary key (name))
+  constraint pk_apply primary key (email))
 ;
 
 create table archive (

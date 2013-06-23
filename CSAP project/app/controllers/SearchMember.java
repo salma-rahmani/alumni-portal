@@ -9,9 +9,12 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.submitSearch;
 import views.html.searchProfile;
-
+import views.html.searchMember;
 
 public class SearchMember extends Controller{
+	public static Result  searchMember() {
+		 return ok(searchMember.render());
+	}
 	public static Result submitSearch() {
 
 		Form<Search> searchForm = Form.form(Search.class).bindFromRequest();

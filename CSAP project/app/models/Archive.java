@@ -13,8 +13,8 @@ public class Archive extends Model {
 	@Id
 	 public String title;
 	 public String description;
-	 public static Finder<String, News> find = new Finder<String, News>(
-				String.class, News.class);
+	 public static Finder<String, Archive> find = new Finder<String, Archive>(
+				String.class, Archive.class);
 
 	 
 }

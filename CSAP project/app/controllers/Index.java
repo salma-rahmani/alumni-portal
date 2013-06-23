@@ -27,7 +27,18 @@ public class Index extends Controller {
     public static Result index() {
         return ok(index.render("Wellcome to CSAP"));
     }
-  
+    public static Result service(){
+    	return ok(service.render());
+    }
+    public static Result office(){
+    	return ok(office.render());
+    }
+    public static Result product(){
+    	return ok(product.render());
+    }
+    public static Result aboutCSAP(){
+    	return ok(aboutCSAP.render());
+    }
 
 
 
