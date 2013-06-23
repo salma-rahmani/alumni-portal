@@ -1,15 +1,34 @@
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.util.*;
+import javax.persistence.*;
 
-import play.data.validation.Constraints.Required;
-import play.db.ebean.Model;
+import play.db.ebean.*;
+import play.data.format.*;
+import play.data.validation.*;
 
+import com.avaje.ebean.*;
 
-
-@Entity
+/**
+ * User entity managed by Ebean
+ */
+@Entity 
+@Table(name="Student")
 public class Student extends Model {
+
+//    @Id
+//    @Constraints.Required
+//    @Formats.NonEmpty
+//    public String username;
+//    @Constraints.Required
+//    public String password;
+//    
+//    @Constraints.Required
+//    public String retypedPassword;
+//    
+//    @Constraints.Required
+//    public String job;
+	
 	@Id
 	 public int id;
 	 public String name;
@@ -23,9 +42,42 @@ public class Student extends Model {
 	 public String passwordconf;
 	 public String current;
 	 public String main;
-   
+    
+    
+    
+    // -- Queries
+    
+    public static Model.Finder<String,Student> find = new Model.Finder(String.class, Student.class);
+    
+    /**
+     * Retrieve all users.
+     */
+    public static List<Student> findAll() {
+        return find.all();
+    }
 
-	public static Finder<String, Student> find = new Finder<String, Student>(
-			String.class, Student.class);
+    /**
+     * Retrieve a User from email.
+     */
+    public static Student findByEmail(String email) {
+        return find.where().eq("email", email).findUnique();
+    }
+    
+    /**
+     * Authenticate a User.
+     */
+    public static Student authenticate(String email, String password) {
+        return find.where()
+            .eq("email", email)
+            .eq("password", password)
+            .findUnique();
+    }
+    
+    // --
+    
+//    public String toString() {
+//        return "User(" + email + ")";
+//    }
 
 }
+

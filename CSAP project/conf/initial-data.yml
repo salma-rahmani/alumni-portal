@@ -3,10 +3,9 @@
 
 users:
 
-    - !!models.UserStorage
-        username:      admin
+    - !!models.Student
+        email:      monira_srt@yahoo.com
         password:   admin
-        job:       admin
         
         
     

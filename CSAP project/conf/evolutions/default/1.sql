@@ -33,7 +33,7 @@ create table news (
   constraint pk_news primary key (title))
 ;
 
-create table student (
+create table Student (
   id                        integer auto_increment not null,
   name                      varchar(255),
   pic                       varchar(255),
@@ -46,15 +46,7 @@ create table student (
   passwordconf              varchar(255),
   current                   varchar(255),
   main                      varchar(255),
-  constraint pk_student primary key (id))
-;
-
-create table UserStorage (
-  username                  varchar(255) not null,
-  password                  varchar(255),
-  retyped_password          varchar(255),
-  job                       varchar(255),
-  constraint pk_UserStorage primary key (username))
+  constraint pk_Student primary key (id))
 ;
 
 create table sign (
@@ -78,9 +70,7 @@ drop table contact;
 
 drop table news;
 
-drop table student;
-
-drop table UserStorage;
+drop table Student;
 
 drop table sign;
 

@@ -6,7 +6,7 @@ import java.util.List;
 
 //import models.CategoryStorage;
 import models.Key;
-import models.UserStorage;
+import models.Student;
 
 import play.data.Form;
 import play.mvc.*;
@@ -35,7 +35,7 @@ public class KeyChecker extends Controller {
 		if (loginForm.hasErrors()) {
 			return badRequest(login.render(loginForm));
 		} else {
-			session("username", loginForm.get().username);
+			session("email", loginForm.get().email);
 			return redirect(routes.Index.index());
 		}
 	}
