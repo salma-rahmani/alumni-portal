@@ -12,7 +12,8 @@ object ApplicationBuild extends Build {
     javaCore,
     javaJdbc,
     javaEbean,
-    "mysql" % "mysql-connector-java" % "5.1.24"
+    "mysql" % "mysql-connector-java" % "5.1.24",
+    "com.typesafe" %% "play-plugins-mailer" % "2.1.0"
     
     
   )

@@ -88,8 +88,9 @@ public class NewsPublisher extends Controller {
 		News.find.ref(arch.title).delete();
 		return ok("archive shod");
 	}
-
+	
+	
+	}
 	
 	
 	
-}

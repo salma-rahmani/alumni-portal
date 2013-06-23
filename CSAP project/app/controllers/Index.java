@@ -14,6 +14,7 @@ import play.api.mvc.MultipartFormData;
 import play.api.mvc.MultipartFormData.FilePart;
 import play.data.Form;
 import play.mvc.*;
+import play.mvc.Security.Authenticated;
 import play.data.validation.*;
 
 
@@ -22,7 +23,7 @@ import views.html.*;
 public class Index extends Controller {
 
 
-	  
+	 // @Security.Authenticated
     public static Result index() {
         return ok(index.render("Wellcome to CSAP"));
     }

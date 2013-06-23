@@ -49,6 +49,14 @@ create table student (
   constraint pk_student primary key (id))
 ;
 
+create table UserStorage (
+  username                  varchar(255) not null,
+  password                  varchar(255),
+  retyped_password          varchar(255),
+  job                       varchar(255),
+  constraint pk_UserStorage primary key (username))
+;
+
 create table sign (
   email                     varchar(255) not null,
   password                  varchar(255),
@@ -71,6 +79,8 @@ drop table contact;
 drop table news;
 
 drop table student;
+
+drop table UserStorage;
 
 drop table sign;
 

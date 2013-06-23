@@ -1,0 +1,48 @@
+@(form: Form[Key])
+
+<html>
+   <head>
+<meta charset="utf-8">
+<title>Login</title>
+
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.css")">
+</head>
+    <body>
+        
+        <h1 style="font-family:'over there'; color:yellow; margin:70px 0px 0px 1000px;">ArchiveMS</h1>
+<div class="container">
+  <section id="content">
+@helper.form(routes.KeyChecker.authenticate) {
+<h1>Sign In</h1>
+
+@if(form.hasGlobalErrors) { 
+                <h1>@form.globalError.message</h1>
+                    
+                
+            }
+            
+            @if(flash.contains("success")) {
+                
+                   <h1>@flash.get("success")</h1> 
+                
+            }
+<div>
+<input type="text" name="username" placeholder="username" />
+</div>
+<div>
+<input type="password" name="password" placeholder="Password" required="required" id="password" />
+</div>
+<div>
+<input type="submit" value="Log in" />
+
+</div>
+}<!-- form -->
+
+</section><!-- content -->
+</div><!-- container -->
+</body>
+</html>
+
+    
+
+

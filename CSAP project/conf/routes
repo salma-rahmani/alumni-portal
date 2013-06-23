@@ -27,5 +27,15 @@ GET		/applyReciever				controllers.ApplyRecorder.applyReciever()
 #GET	/signed						controllers.LogIn.adminSigned()
 
 
+
+#added by jawid
+
+POST   	/email/sent					controllers.MessageForwarder.sendEmail()
+GET		/login						controllers.KeyChecker.login()
+POST		/login					controllers.KeyChecker.authenticate()
+GET		/logout						controllers.KeyChecker.logout()
+#finished jawid
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
